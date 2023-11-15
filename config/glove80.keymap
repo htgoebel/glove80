@@ -8,6 +8,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
+#include <dt-bindings/zmk/matrix_transform.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/rgb.h>
 
@@ -85,6 +86,35 @@
             bindings
                 = <&out OUT_BLE>,
                   <&bt BT_SEL 3>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+	// key-codes see https://github.com/moergo-sc/zmk/blob/main/app/boards/arm/glove80/glove80.dtsi
+
+	// pressing inner thumb keys create SHIFT-CTRL
+	combo_LHS_shift_ctrl {
+            timeout-ms = <50>;
+            key-positions = <RC(0,6) RC(3,6)>;
+            bindings = <&kp LS(LCTRL)>;
+        };
+        combo_RHS_shift_ctrl {
+            timeout-ms = <50>;
+            key-positions = <RC(0,7) RC(3,7)>;
+            bindings = <&kp RS(RCTRL)>;
+        };
+
+	// pressing middle thumb keys create CTRL-ALT
+	combo_LHS_ctrl_alt {
+            timeout-ms = <50>;
+            key-positions = <RC(1,6) RC(4,6)>;
+            bindings = <&kp LA(LCTRL)>;
+        };
+        combo_RHS_ctrl_alt {
+            timeout-ms = <50>;
+            key-positions = <RC(1,7) RC(4,7)>;
+            bindings = <&kp RA(RCTRL)>;
         };
     };
 
