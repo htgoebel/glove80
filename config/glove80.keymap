@@ -156,3 +156,10 @@
 
     };
 };
+
+// Emacs config:
+//    M-x delete-trailing-whitespace
+// Local Variables:
+// show-trailing-whitespace: t
+// mode: c
+// End:
