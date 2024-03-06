@@ -20,6 +20,11 @@
 #define LOWER 1
 #define MAGIC 2
 
+// global timing settings
+&mt {
+  quick-tap-ms = <200>;  // repeat on tap-into-hold
+};
+
 / {
     behaviors {
         // For the "layer" key, it'd nice to be able to use it as either a shift or a toggle.
